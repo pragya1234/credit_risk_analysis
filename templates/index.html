@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Tomorrow's Inflow In River</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="POST">
+    	<input type="text" name="inflow_1" placeholder="Inflow1 (Yesterday)" required="required" />
+		
+        <input type="text" name="inflow_2" placeholder="Inflow2 (Today)" required="required" />
+		<input type="text" name="inflow_3" placeholder="Inflow3 (Yesterday)" required="required" />
+		
+        <input type="text" name="inflow_4" placeholder="Inflow4 (Today)" required="required" />
+		<input type="text" name="inflow_5" placeholder="Inflow5 (Yesterday)" required="required" />
+		
+        <input type="text" name="inflow_6" placeholder="Inflow6 (Today)" required="required" />
+		<input type="text" name="inflow_7" placeholder="Inflow7 (Yesterday)" required="required" />
+		
+        <input type="text" name="inflow_8" placeholder="Inflow8 (Today)" required="required" />
+		<input type="text" name="inflow_9" placeholder="Inflow9 (Yesterday)" required="required" />
+		
+        <input type="text" name="inflow_10" placeholder="Inflow10 (Today)" required="required" />
+		
+		<!--input type="text" name="interview_score" placeholder="Interview Score" required="required" /-->
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Inflow</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
